@@ -40,5 +40,5 @@ public class Member {
 	@OneToMany
 	@JoinColumn(name ="member")
 	private List<MemberRole> roles;
-	
+
 }
