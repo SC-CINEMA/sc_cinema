@@ -27,10 +27,10 @@ public class Member {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO,
 			generator = "MEMBER_SEQ_GENERATOR")
-	private Long memberNumber; // id
-	private String memberId; // 이름
+	private Long memberNumber; // 식별아이디
+	private String memberId; // 아이디
 	private String password;
-	private String memberName;
+	private String memberName; //성명
 	private String birth;
 	private String email;
 	

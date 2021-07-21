@@ -15,4 +15,11 @@ import java.util.Optional;
 @Transactional
 public class MemberServiceImpl implements MemberService {
 
+    @Autowired
+    MemberRepository memberRepository;
+
+    @Override
+    public void findByName(String name) {
+        memberRepository.findByMemberId(name);
+    }
 }
