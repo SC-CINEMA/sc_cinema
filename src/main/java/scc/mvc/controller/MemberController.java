@@ -30,5 +30,11 @@ public class MemberController {
 		return "index";
 	}
 	
+	@RequestMapping("/login")
+	public String login(Member member) {
+		memberService.login(member.getMemberId(), member.getPassword());
+		return "index";
+	}
+	
 	
 }
