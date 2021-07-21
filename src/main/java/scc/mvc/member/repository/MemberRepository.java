@@ -9,6 +9,10 @@ import java.util.List;
 import java.util.Optional;
 
 public interface MemberRepository extends JpaRepository<Member, Long> {
+	
     @Query("select m from Member m where m.memberId = ?1")
     Member findByMemberId(String memberId);
+    
+    @Query("select m from Member m where m.memberId= ?1 and m.password = ?2")
+    Member login(String memberId, String password);
 }

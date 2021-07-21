@@ -22,4 +22,10 @@ public class MemberServiceImpl implements MemberService {
     public void findByName(String name) {
         memberRepository.findByMemberId(name);
     }
+
+	@Override
+	public Member login(String memberId, String password) {
+		
+		return memberRepository.login(memberId, password);
+	}
 }
