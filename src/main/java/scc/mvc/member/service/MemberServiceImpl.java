@@ -28,4 +28,12 @@ public class MemberServiceImpl implements MemberService {
 		
 		return memberRepository.login(memberId, password);
 	}
+
+	@Override
+	public void register(Member member) {
+		Member dbMember = new Member(null, member.getMemberId(), member.getPassword()
+				, member.getMemberName(), member.getBirth(), member.getEmail(), null, null);
+		
+		memberRepository.save(dbMember);
+	}
 }

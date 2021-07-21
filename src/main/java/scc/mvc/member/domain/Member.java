@@ -41,6 +41,21 @@ public class Member {
 	@JoinColumn(name ="member")
 	private List<MemberRole> roles;
 
+	
+	
+	public Member(Long memberNumber, String memberId, String password, String memberName, String birth, String email,
+			LocalDateTime regdate, List<MemberRole> roles) {
+		super();
+		this.memberNumber = memberNumber;
+		this.memberId = memberId;
+		this.password = password;
+		this.memberName = memberName;
+		this.birth = birth;
+		this.email = email;
+		this.regdate = regdate;
+		this.roles = roles;
+	}
+
 	public Long getMemberNumber() {
 		return memberNumber;
 	}
