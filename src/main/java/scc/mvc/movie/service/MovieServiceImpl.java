@@ -1,6 +1,5 @@
 package scc.mvc.movie.service;
 
-import java.io.Console;
 import java.util.List;
 
 import javax.transaction.Transactional;
