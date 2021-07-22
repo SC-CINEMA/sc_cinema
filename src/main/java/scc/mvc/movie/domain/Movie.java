@@ -3,18 +3,27 @@ package scc.mvc.movie.domain;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 
 @Entity
 public class Movie {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO,
+	generator = "MOVIE_SEQ_GENERATOR")
 	private Long movieCode;
 	private String movieName;
 	private String movieRate;
 	private Long movieRunningtime;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-DD")
 	private LocalDateTime movieOpenDate;
+	
 	private String movieDistribution;
 	private Long movieTotalAudience;
 	private String movieGenre;
@@ -23,6 +32,7 @@ public class Movie {
 	private String moviePoster;
 	
 
+	
 	public Movie(Long movieCode, String movieName, String movieRate, Long movieRunningtime, LocalDateTime movieOpenDate,
 			String movieDistribution, Long movieTotalAudience, String movieGenre, int movieStatus, String movieIntro,
 			String moviePoster) {
@@ -39,6 +49,7 @@ public class Movie {
 		this.movieIntro = movieIntro;
 		this.moviePoster = moviePoster;
 	}
+	
 	public Long getMovieCode() {
 		return movieCode;
 	}
