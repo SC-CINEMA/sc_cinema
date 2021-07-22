@@ -19,8 +19,9 @@ public class MovieServiceImpl implements MovieService {
 	
 	@Override
 	public void Enroll(Movie movie) {
-		movieRepository.save(movie);
-		
+		Movie dbMovie = new Movie(null, movie.getMovieName(), movie.getMovieRate(), movie.getMovieRunningtime(), movie.getMovieOpenDate(), movie.getMovieDistribution(), null, movie.getMovieGenre(), 1, movie.getMovieIntro(), movie.getMoviePoster());
+		movieRepository.save(dbMovie);
+
 	}
 
 	@Override
