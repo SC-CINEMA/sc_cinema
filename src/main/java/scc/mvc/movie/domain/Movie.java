@@ -2,6 +2,7 @@ package scc.mvc.movie.domain;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,27 +21,25 @@ public class Movie {
 	private String movieName;
 	private String movieRate;
 	private Long movieRunningtime;
-	
-	@DateTimeFormat(pattern = "yyyy-MM-DD")
-	private LocalDateTime movieOpenDate;
+	private String movieOpenDate;
 	
 	private String movieDistribution;
 	private Long movieTotalAudience;
 	private String movieGenre;
-	private int movieStatus;
+	private Long movieStatus;
 	private String movieIntro;
 	private String moviePoster;
 	
-
 	
-	public Movie(Long movieCode, String movieName, String movieRate, Long movieRunningtime, LocalDateTime movieOpenDate,
-			String movieDistribution, Long movieTotalAudience, String movieGenre, int movieStatus, String movieIntro,
+	public Movie() {}
+	public Movie(Long movieCode, String movieName, String movieRate, Long movieRunningtime, String movieOpenDate,
+			String movieDistribution, Long movieTotalAudience, String movieGenre, Long movieStatus, String movieIntro,
 			String moviePoster) {
 		super();
 		this.movieCode = movieCode;
 		this.movieName = movieName;
 		this.movieRate = movieRate;
-		this.movieRunningtime = movieRunningtime;
+		this.movieRunningtime = movieRunningtime; 
 		this.movieOpenDate = movieOpenDate;
 		this.movieDistribution = movieDistribution;
 		this.movieTotalAudience = movieTotalAudience;
@@ -49,6 +48,7 @@ public class Movie {
 		this.movieIntro = movieIntro;
 		this.moviePoster = moviePoster;
 	}
+	
 	
 	public Long getMovieCode() {
 		return movieCode;
@@ -74,10 +74,10 @@ public class Movie {
 	public void setMovieRunningtime(Long movieRunningtime) {
 		this.movieRunningtime = movieRunningtime;
 	}
-	public LocalDateTime getMovieOpenDate() {
+	public String getMovieOpenDate() {
 		return movieOpenDate;
 	}
-	public void setMovieOpenDate(LocalDateTime movieOpenDate) {
+	public void setMovieOpenDate(String movieOpenDate) {
 		this.movieOpenDate = movieOpenDate;
 	}
 	public String getMovieDistribution() {
@@ -98,10 +98,10 @@ public class Movie {
 	public void setMovieGenre(String movieGenre) {
 		this.movieGenre = movieGenre;
 	}
-	public int getMovieStatus() {
+	public Long getMovieStatus() {
 		return movieStatus;
 	}
-	public void setMovieStatus(int movieStatus) {
+	public void setMovieStatus(Long movieStatus) {
 		this.movieStatus = movieStatus;
 	}
 	public String getMovieIntro() {
@@ -116,5 +116,6 @@ public class Movie {
 	public void setMoviePoster(String moviePoster) {
 		this.moviePoster = moviePoster;
 	}
+	
 	
 }

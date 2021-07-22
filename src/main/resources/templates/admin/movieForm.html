@@ -13,8 +13,8 @@
         <form id="register" action="/admin/register" method="post" class="input-group">
             <input type="text" class="input-field" th:name="movieName" placeholder="영화제목" required>
             <input type="text" class="input-field" th:name="movieRate" placeholder="연령등급" required>
-            <input type="text" class="input-field" th:name="movieRunningTime" placeholder="러닝타임" required>
-            <input type="date" class="input-field" th:name="movieOpenDate" placeholder="개봉일" required>
+            <input type="number" class="input-field" th:name="movieRunningtime" placeholder="러닝타임" required>
+            <input type="text" class="input-field" th:name="movieOpenDate" placeholder="개봉일" required>
             <input type="text" class="input-field" th:name="movieDistribution" placeholder="배급사" required>
 			<input type="text" class="input-field" th:name="movieGenre" placeholder="장르" required>
 			<input type="text" class="input-field" th:name="movieIntro" placeholder="영화소개" required>

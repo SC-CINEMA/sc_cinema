@@ -1,5 +1,6 @@
 package scc.mvc.movie.service;
 
+import java.io.Console;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -19,7 +20,11 @@ public class MovieServiceImpl implements MovieService {
 	
 	@Override
 	public void Enroll(Movie movie) {
-		Movie dbMovie = new Movie(null, movie.getMovieName(), movie.getMovieRate(), movie.getMovieRunningtime(), movie.getMovieOpenDate(), movie.getMovieDistribution(), null, movie.getMovieGenre(), 1, movie.getMovieIntro(), movie.getMoviePoster());
+
+		Movie dbMovie = new Movie(null, movie.getMovieName(), movie.getMovieRate(), movie.getMovieRunningtime()
+				,movie.getMovieOpenDate(), movie.getMovieDistribution(), movie.getMovieTotalAudience()
+				,movie.getMovieGenre(), null, movie.getMovieIntro(),movie.getMoviePoster());
+		
 		movieRepository.save(dbMovie);
 
 	}

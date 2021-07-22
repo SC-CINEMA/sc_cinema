@@ -137,70 +137,27 @@
             </div>
           </div>
         </div>
-
+	
+	
         <div class="owl-carousel nonloop-block-13 mb-5">
-
-          <div class="property">
+          <div class="property" th:each="movie : ${list}">
             <a href="property-single.html">
-              <img src="images/property_1.jpg" alt="Image" class="img-fluid">
+              <img th:src="${movie.moviePoster}" alt="Image" class="img-fluid">
             </a>
             <div class="prop-details p-3">
-              <div><strong class="price">$3,400,000</strong></div>
+              <div><strong th:text="${movie.movieName}" class="price">$3,400,000</strong></div>
               <div class="mb-2 d-flex justify-content-between">
-                <span class="w border-r">6 beds</span> 
-                <span class="w border-r">4 baths</span>
-                <span class="w">4,250 sqft.</span>
+                <span th:text="${movie.movieRate}" class="w border-r">6 beds</span> 
+                <span th:text="${movie.movieRunningtime}" class="w border-r">4 baths</span>
+                <span th:text="${movie.movieGenre}" class="w">4,250 sqft.</span>
               </div>
-              <div>480 12th, Unit 14, San Francisco, CA</div>
+              <div th:text="${movie.movieIntro}">480 12th, Unit 14, San Francisco, CA</div>
             </div>
           </div>
-
-          <div class="property">
-            <a href="property-single.html">
-              <img src="images/property_2.jpg" alt="Image" class="img-fluid">
-            </a>
-            <div class="prop-details p-3">
-              <div><strong class="price">$3,400,000</strong></div>
-              <div class="mb-2 d-flex justify-content-between">
-                <span class="w border-r">6 beds</span> 
-                <span class="w border-r">4 baths</span>
-                <span class="w">4,250 sqft.</span>
-              </div>
-              <div>480 12th, Unit 14, San Francisco, CA</div>
-            </div>
-          </div>
-
-          <div class="property">
-            <a href="property-single.html">
-              <img src="images/property_3.jpg" alt="Image" class="img-fluid">
-            </a>
-            <div class="prop-details p-3">
-              <div><strong class="price">$3,400,000</strong></div>
-              <div class="mb-2 d-flex justify-content-between">
-                <span class="w border-r">6 beds</span> 
-                <span class="w border-r">4 baths</span>
-                <span class="w">4,250 sqft.</span>
-              </div>
-              <div>480 12th, Unit 14, San Francisco, CA</div>
-            </div>
-          </div>
-
-          <div class="property">
-            <a href="property-single.html">
-              <img src="images/property_4.jpg" alt="Image" class="img-fluid">
-            </a>
-            <div class="prop-details p-3">
-              <div><strong class="price">$3,400,000</strong></div>
-              <div class="mb-2 d-flex justify-content-between">
-                <span class="w border-r">6 beds</span> 
-                <span class="w border-r">4 baths</span>
-                <span class="w">4,250 sqft.</span>
-              </div>
-              <div>480 12th, Unit 14, San Francisco, CA</div>
-            </div>
-          </div>
-<!-- <-- 반복문 끝-->
         </div>
+
+<!-- <-- 반복문 끝-->
+
         <div class="row justify-content-center">
           <div class="col-md-4">
             <a href="listings.html" class="btn btn-primary btn-block">View All Property Listings</a>
