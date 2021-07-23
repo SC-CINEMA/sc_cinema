@@ -11,9 +11,14 @@ import scc.mvc.movie.service.MovieService;
 @RequestMapping("/admin")
 public class AdminController {
 
-	@Autowired
 	MovieService movieService;
 	
+	@Autowired
+	public AdminController(MovieService movieService) {
+		super();
+		this.movieService = movieService;
+	}
+
 	@RequestMapping("/createForm")
 	public String createMovieForm() {
 		return "admin/movieForm";
@@ -21,7 +26,7 @@ public class AdminController {
 	
 	@RequestMapping("/register")
 	public String registerMovie(Movie movie) {
-		movieService.Enroll(movie);
+		movieService.enroll(movie);
 		
 		return "index";
 	}

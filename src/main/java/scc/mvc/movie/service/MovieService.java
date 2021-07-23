@@ -10,7 +10,7 @@ import scc.mvc.movie.domain.Movie;
 public interface MovieService {
 	
 	//등록서비스
-	public void Enroll(Movie movie);
-	public List<Movie> ShowAll();  
+	public void enroll(Movie movie);
+	public List<Movie> showAll();  
 
 }

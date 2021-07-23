@@ -11,9 +11,15 @@ import scc.mvc.member.service.MemberService;
 @Controller
 public class MemberController {
 	
-	@Autowired
 	MemberService memberService;
 	
+	
+	@Autowired
+	public MemberController(MemberService memberService) {
+		super();
+		this.memberService = memberService;
+	}
+
 	@GetMapping("/loginForm")
 	public String loginForm() {	
 		return "loginPage";

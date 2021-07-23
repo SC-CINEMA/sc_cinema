@@ -22,7 +22,7 @@ public class HomeController {
 
 	@GetMapping("/")
 	public String index(Model model) {
-		List<Movie> list = movieService.ShowAll();
+		List<Movie> list = movieService.showAll();
 		for(Movie movie : list) {
 			System.out.println(movie.getMovieName());
 			System.out.println(1);

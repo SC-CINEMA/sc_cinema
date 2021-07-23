@@ -18,7 +18,7 @@ public class MovieServiceImpl implements MovieService {
 	MovieRepository movieRepository;
 	
 	@Override
-	public void Enroll(Movie movie) {
+	public void enroll(Movie movie) {
 
 		Movie dbMovie = new Movie(null, movie.getMovieName(), movie.getMovieRate(), movie.getMovieRunningtime()
 				,movie.getMovieOpenDate(), movie.getMovieDistribution(), movie.getMovieTotalAudience()
@@ -29,7 +29,7 @@ public class MovieServiceImpl implements MovieService {
 	}
 
 	@Override
-	public List<Movie> ShowAll() {
+	public List<Movie> showAll() {
 		return movieRepository.findAll();
 	}
 
