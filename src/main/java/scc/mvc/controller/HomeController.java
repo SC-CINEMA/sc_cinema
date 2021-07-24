@@ -14,19 +14,19 @@ import scc.mvc.movie.service.MovieServiceImpl;
 
 @Controller
 public class HomeController {
-	@Autowired
+	
 	MovieService movieService;
 	
-	
+	@Autowired
+	public HomeController(MovieService movieService) {
+		super();
+		this.movieService = movieService;
+	}
 
 
 	@GetMapping("/")
 	public String index(Model model) {
 		List<Movie> list = movieService.showAll();
-		for(Movie movie : list) {
-			System.out.println(movie.getMovieName());
-			System.out.println(1);
-		}
 		model.addAttribute("list", list);
 		return "index";
 	}
