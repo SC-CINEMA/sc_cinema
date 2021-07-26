@@ -142,7 +142,7 @@
 	
         <div class="owl-carousel nonloop-block-13 mb-5">
           <div class="property" th:each="movie : ${list}">
-            <a href="property-single.html">
+            <a th:href="@{'/movies/detail/'+${movie.movieCode}}">
               <img th:src="${movie.moviePoster}" alt="Image" class="img-fluid">
             </a>
             <div class="prop-details p-3">

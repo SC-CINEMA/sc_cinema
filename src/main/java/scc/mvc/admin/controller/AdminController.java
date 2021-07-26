@@ -28,6 +28,6 @@ public class AdminController {
 	public String registerMovie(Movie movie) {
 		movieService.enroll(movie);
 		
-		return "index";
+		return "redirect:/";
 	}
 }

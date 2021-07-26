@@ -12,5 +12,6 @@ public interface MovieService {
 	//등록서비스
 	public void enroll(Movie movie);
 	public List<Movie> showAll();  
-
+	public Movie detailView(Long movieCode); 
+	
 }

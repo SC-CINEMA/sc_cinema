@@ -33,4 +33,9 @@ public class MovieServiceImpl implements MovieService {
 		return movieRepository.findAll();
 	}
 
+	@Override
+	public Movie detailView(Long movieCode) {
+		return movieRepository.findById(movieCode).orElse(null);
+	}
+
 }
