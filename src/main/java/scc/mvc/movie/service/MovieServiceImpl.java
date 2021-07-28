@@ -14,9 +14,14 @@ import scc.mvc.movie.repository.MovieRepository;
 @Transactional
 public class MovieServiceImpl implements MovieService {
 
-	@Autowired
 	MovieRepository movieRepository;
 	
+	@Autowired
+	public MovieServiceImpl(MovieRepository movieRepository) {
+		super();
+		this.movieRepository = movieRepository;
+	}
+
 	@Override
 	public void enroll(Movie movie) {
 
