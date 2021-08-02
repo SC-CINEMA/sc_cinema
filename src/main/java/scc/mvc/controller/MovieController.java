@@ -1,5 +1,7 @@
 package scc.mvc.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,7 +36,9 @@ public class MovieController {
 	}
 	
 	@GetMapping("/info")
-	public String info() {
+	public String info(Model model) {
+		List<Movie> list = movieService.showAll();
+		model.addAttribute("list", list);
 		return "info";
 	}
 	
